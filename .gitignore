@@ -1,0 +1,6 @@
+*.idea
+temp.py
+__pycache__/
+ticket.txt
+*.exe
+*.db

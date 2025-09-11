@@ -6,10 +6,14 @@ df4 = pd.DataFrame({
     'tmp':[23, 22, 24, 26]},
     index=[1, 2, 3, 4]
 )
-print(df4)
-df9 =df4.sample(n=2) # 중복되지않은 row 2개 랜덤하게 추출
-print(df9)
-df10 = df4.nsmallest(2,'tmp')  # 가장 작은 값 두개 nlagrest면 큰값 두개
-print(df10)
-#tail 원본기준 아래서 n개  head 원본기준 위에서 n개 기본5개
+print(df4[['date','tmp']])
+#파이썬의 정규표현식 re 공부하면 좋다.
+#filter.regex < 정규표현식의 약자
+# i(index) iloc는 인덱스로 확인 loc은 컬럼으로 확인
+# 깊은복사는 메모리를 더 차지함
+# 얕은 복사는 포인터처럼 참조하는 느낌
+
+print(df4.iloc[1:3])
+print(df4.iloc[:,[0,2]])
+print(df4.iloc[1:3,[0,2]])
 

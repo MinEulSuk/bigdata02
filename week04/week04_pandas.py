@@ -19,5 +19,5 @@ df1 = pd.DataFrame(
     , index=['1', '2', '3']
 )
 print(df1)
-print(df1.apply(square)) # 각 원소에 제곱 함수 적용
-print(df1.apply(cube)) # 각 원소에 세제곱 함수 적용
+print(df1.apply(lambda x : x*x)) # 각 원소에 제곱 함수 적용
+print(df1.apply(lambda x : x**3)) # 각 원소에 세제곱 함수 적용

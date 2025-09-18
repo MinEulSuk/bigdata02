@@ -29,5 +29,13 @@ plt.xlabel("Survived (0 = No, 1 = Yes)")
 plt.ylabel("Fare")
 plt.show()
 
+plt.subplot(2,3,5)# 2 rows, 3 columns, 2nd plot
+sns.boxplot(data=titanic,x="sex",y="age",hue="survived",palette="Oranges")# 박스플롯으로 표현
+plt.title('age by gender and survival')# 요금에 따른 생존 분포
+plt.xlabel("Gender")
+plt.ylabel("Age")
+#plt.legend(title='Survived', labels=["No", "Yes"])
+
+plt.show()
 
 

@@ -2,16 +2,22 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-mpg = sns.load_dataset("mpg")
-print(mpg.value_counts())#
+def square(x):
+    return x * x
 
-df = pd.DataFrame({
-    'city': ['anyang', 'seoul', 'seoul', 'anyang','seoul', 'incheon'],
-    'name': ['tom','jerry','park','kim','park','lee'],
-    },index = [1,2,3,4,5,6]
+def cube(x):
+    return x * x * x
+
+mpg = sns.load_dataset('mpg')
+df1 = pd.DataFrame(
+    {
+        'A': [1, 2, 3],
+        'B': [4, 5, 6],
+        'C': [7, 8, 9],
+
+    }
+    , index=['1', '2', '3']
 )
-print(df)
-# print(df.value_counts()) # index를 제외한 모든 컬럼의 값이 동일한 행의 개수를 세어줌 즉 중복값
-# print(df.shape) # (6, 2)
-print(df['city'].nunique()) # 도시가 몇개인지 세기 # 3
-
+print(df1)
+print(df1.apply(square)) # 각 원소에 제곱 함수 적용
+print(df1.apply(cube)) # 각 원소에 세제곱 함수 적용

@@ -23,18 +23,51 @@ df = sns.load_dataset("titanic")
 # #plt.tight_layout()
 # plt.show()
 
+# plt.figure(figsize=(8,4))
+# sns.countplot(data=df,x="class",order=["First","Second","Third"])
+# plt.title("Passenger Count by Class")
+# plt.xlabel("class")
+# plt.ylabel("Count")
+# #plt.tight_layout()
+# plt.show()
+
+# plt.figure(figsize=(8,4))
+# sns.countplot(data=df,x="sex",hue='survived')
+# #남녀로 구분하고 생존자 수를 막대그래프로 표현
+# plt.xlabel("sex")
+# plt.ylabel("Count")
+# #plt.tight_layout()
+# plt.show()
+
+# plt.figure(figsize=(8,4))
+# sns.countplot(data=df,x="sex",hue='survived')
+# #남녀로 구분하고 생존자 수를 막대그래프로 표현
+# plt.legend(loc="upper right",title='Survived', labels=['No', 'Yes'])
+# plt.xlabel("sex")
+# plt.ylabel("Count")
+# #plt.tight_layout()
+# plt.show()
+
+# plt.figure(figsize=(8,4))
+# sns.boxplot(data=df,x="class",y="age",order=["First","Second","Third"])
+# plt.title("Fare Distribution by Passenger Class")
+# plt.xlabel("class")
+# plt.ylabel("Age")
+# plt.tight_layout()
+# plt.show()
+
+# plt.figure(figsize=(8,4))
+# sns.violinplot(data=df,x="survived",y="age")
+# plt.title("Age Distribution by Survival Status")
+# plt.xlabel("Survived (0 = No, 1 = Yes)")
+# plt.ylabel("age")
+# #plt.tight_layout()
+# plt.show()
+
 plt.figure(figsize=(8,4))
-sns.countplot(data=df,x="class",order=["First","Second","Third"])
-plt.title("Passenger Count by Class")
-plt.xlabel("class")
-plt.ylabel("Count")
+sns.catplot(data=df,x="class",y="survived",kind="count",order=["First","Second","Third"],hue="sex")
+plt.title("Age Distribution by Survival Status")
+plt.xlabel("Survived (0 = No, 1 = Yes)")
+plt.ylabel("age")
 #plt.tight_layout()
 plt.show()
-
-
-
-
-
-
-
-

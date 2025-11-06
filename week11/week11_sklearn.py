@@ -53,7 +53,14 @@ axes[1,1].grid()
 
 plt.show()
 
+plt.figure(figsize=(12,8))
+sns.histplot(df_diabetes['target'],color = 'blue',bins = 10, kde=True)
 
+plt.title('Histogram of Diabetes Target')
+plt.xlabel('Target')
+plt.ylabel('Frequency')
+plt.grid()
+plt.show()
 
 
 

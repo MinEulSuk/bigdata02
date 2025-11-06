@@ -16,7 +16,10 @@ diabetes = load_diabetes()
 #print(diabetes.target) # 당뇨병 진행 정도 수치
 
 df_diabetes = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
-print(df_diabetes.tail())
+#print(df_diabetes.tail())
 
+df_diabetes['target'] = diabetes.target # 당뇨병 진행 정도 수치 추가
+print(df_diabetes.tail())# 모든 컬럼이 스케일링 되어있음 정규분포를 기준으로 스케일링
+print(df_diabetes['age'].describe()) # 나이 컬럼 통계량 확인
 
 

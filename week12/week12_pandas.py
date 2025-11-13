@@ -4,9 +4,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 wh = pd.read_csv('wh.csv')
-print(wh.head())
-print(wh.info())
-print(wh.describe())
-# 파운드 ( 1 == 453.592그램) , 인치 (1 == 2.54센티미터)
-print(wh.query('Weight > 350'))
-print(wh[wh['Weight'] > 350]) # '' 생각해야함
+# new_wh = wh.query('Weight<390') # 이상치 제거 버전
+# print(new_wh.info())
+# print(new_wh.describe())
+
+criteria = wh['Weight'].quantile(0.9999) # 99.99% 데이터 지점
+print(criteria)
+print(round(criteria,1))#255.9
+new_wh = wh[wh['Weight'] < criteria]
+print(new_wh.info())
+
